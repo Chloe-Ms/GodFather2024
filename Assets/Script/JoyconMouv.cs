@@ -31,7 +31,7 @@ public class JoyconMouv : MonoBehaviour
         if (joycons.Count > 0)
         {
             Joycon j = joycons [jc_ind];
-            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
+            if (j.GetButtonDown(Joycon.Button.SHOULDER_2) || Input.GetKeyDown(KeyCode.Space))
             {
                 //Debug.Log ("Shoulder button 2 pressed");
                 realPosition = new Vector3(0,0,0);
@@ -41,21 +41,14 @@ public class JoyconMouv : MonoBehaviour
             if (realPosition.x < minX)
             {
                 newPosition.x = minX;
-                Debug.Log("Min");
-                Debug.Log(realPosition.x);
             }else if (realPosition.x > maxX)
             {
                 newPosition.x = maxX;
-                Debug.Log("Max");
-                Debug.Log(realPosition.x);
             }else
             {
                 newPosition.x = realPosition.x;
-                Debug.Log("Shit");
-                Debug.Log(realPosition.x);
             }
             gameObject.transform.position = newPosition;
-            Debug.Log(gyro);
         }
     }
 }
