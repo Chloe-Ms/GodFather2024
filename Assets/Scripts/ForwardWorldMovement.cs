@@ -1,15 +1,22 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ForwardPlayerMovement : MonoBehaviour
+public class ForwardWorldMovement : MonoBehaviour
 {
     [SerializeField] float _forwardMaxSpeed = 10f;
     [SerializeField] float _timeToAccelerate = 2f;
     [SerializeField] float _timeToDeccelerate = 2f;
-    Camera _cam;
+    [SerializeField] List<GameObject> _objectsToMove;
 
+    Camera _cam;
     Coroutine _coroutine;
     float _speed = 0f;
+
+    private void Awake()
+    {
+        Managers.WorldMovement = this;
+    }
 
     private void Start()
     {
@@ -72,7 +79,10 @@ public class ForwardPlayerMovement : MonoBehaviour
     {
         if (_speed > 0f)
         {
-            transform.position += _cam.transform.forward * _speed * Time.deltaTime;
+            foreach (GameObject go in _objectsToMove)
+            {
+                go.transform.position += - _cam.transform.forward * _speed * Time.deltaTime;
+            }
         }
     }
 
@@ -82,15 +92,6 @@ public class ForwardPlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             StartMovingForward();
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position -= transform.right * Time.deltaTime * 5;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += transform.right * Time.deltaTime * 5;
         }
     }
 

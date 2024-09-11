@@ -8,8 +8,7 @@ public class TriggerRoadEnd : MonoBehaviour
     {
         if (collider != null)
         {
-            ForwardPlayerMovement playerForwardMvt = collider.GetComponent<ForwardPlayerMovement>();
-            playerForwardMvt?.StopDecelerateMovingForward();
+            Managers.WorldMovement?.StopDecelerateMovingForward();
         }
     }
 }
