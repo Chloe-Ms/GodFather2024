@@ -17,9 +17,11 @@ public class ForwardPlayerMovement : MonoBehaviour
 
     IEnumerator RoutineStart()
     {
-        while (_speed < _forwardMaxSpeed)
+        float timer = 0f;
+        while (timer < _timeToAccelerate)
         {
-            _speed += Time.deltaTime / _timeToAccelerate;
+            timer += Time.deltaTime;
+            _speed = Mathf.Lerp(0f, _forwardMaxSpeed, timer / _timeToAccelerate);
             yield return null;
         }
         _speed = _forwardMaxSpeed;
@@ -46,7 +48,7 @@ public class ForwardPlayerMovement : MonoBehaviour
     {
         if (_speed > 0f)
         {
-            transform.position += _cam.transform.forward * _speed;
+            transform.position += _cam.transform.forward * _speed * Time.deltaTime;
         }
     }
 
