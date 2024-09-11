@@ -5,6 +5,7 @@ public class ForwardPlayerMovement : MonoBehaviour
 {
     [SerializeField] float _forwardMaxSpeed = 10f;
     [SerializeField] float _timeToAccelerate = 2f;
+    [SerializeField] float _timeToDeccelerate = 2f;
     Camera _cam;
 
     Coroutine _coroutine;
@@ -15,7 +16,7 @@ public class ForwardPlayerMovement : MonoBehaviour
         _cam = Camera.main;
     }
 
-    IEnumerator RoutineStart()
+    IEnumerator RoutineAccelerate()
     {
         float timer = 0f;
         while (timer < _timeToAccelerate)
@@ -31,7 +32,7 @@ public class ForwardPlayerMovement : MonoBehaviour
     {
         if (_coroutine == null && _speed != _forwardMaxSpeed)
         {
-            _coroutine = StartCoroutine(RoutineStart());
+            _coroutine = StartCoroutine(RoutineAccelerate());
         }
     }
 
@@ -42,6 +43,29 @@ public class ForwardPlayerMovement : MonoBehaviour
             StopCoroutine(_coroutine);
             _coroutine = null;
         }
+        _speed = 0f;
+    }
+
+    public void StopDecelerateMovingForward()
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
+        _coroutine = StartCoroutine(RoutineDecelerate());
+    }
+
+    IEnumerator RoutineDecelerate()
+    {
+        float timer = 0f;
+        while (timer < _timeToAccelerate)
+        {
+            timer += Time.deltaTime;
+            _speed = Mathf.Lerp(_forwardMaxSpeed, 0f, timer / _timeToDeccelerate);
+            yield return null;
+        }
+        _speed = 0f;
     }
 
     void MoveForward()
