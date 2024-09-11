@@ -76,12 +76,21 @@ public class ForwardPlayerMovement : MonoBehaviour
         }
     }
 
-    //Use instead of the board
+    //Start instead of the board
     void InputStartMoving()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             StartMovingForward();
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position -= transform.right * Time.deltaTime * 5;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position += transform.right * Time.deltaTime * 5;
         }
     }
 
