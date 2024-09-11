@@ -6,7 +6,6 @@ public class JoyconMouv : MonoBehaviour
 {
     private List<Joycon> joycons;
 
-    public Quaternion orientation;
     public Vector3 gyro;
     public int jc_ind = 0;
     public Vector3 defaultPosition;
