@@ -21,6 +21,8 @@ public class ForwardWorldMovement : MonoBehaviour
     int _indexNextChunk;
     public List<GameObject> ObjectsToMove { get; private set; }
     public bool HasStarted { get; private set; } = false;
+    public float ForwardMaxSpeed { get => _forwardMaxSpeed; }
+    public float Speed { get => _speed; }
 
     private void Awake()
     {
@@ -63,10 +65,10 @@ public class ForwardWorldMovement : MonoBehaviour
         while (timer < _timeToAccelerate)
         {
             timer += Time.deltaTime;
-            _speed = Mathf.Lerp(0f, _forwardMaxSpeed, timer / _timeToAccelerate);
+            _speed = Mathf.Lerp(0f, ForwardMaxSpeed, timer / _timeToAccelerate);
             yield return null;
         }
-        _speed = _forwardMaxSpeed;
+        _speed = ForwardMaxSpeed;
     }
 
     public void Boost()
@@ -89,7 +91,7 @@ public class ForwardWorldMovement : MonoBehaviour
             _speed = Mathf.Lerp(startingSpeed, _boostSpeed, timer / _timeToAccelerateBoost);
             yield return null;
         }
-        _speed = _forwardMaxSpeed;
+        _speed = ForwardMaxSpeed;
         yield return new WaitForSeconds(_boostDuration);
         _coroutine = StartCoroutine(RoutineDecelerateBoost());
     }
@@ -101,7 +103,7 @@ public class ForwardWorldMovement : MonoBehaviour
         while (timer < _timeToDeccelerateBoost)
         {
             timer += Time.deltaTime;
-            _speed = Mathf.Lerp(startingSpeed, _forwardMaxSpeed, timer / _timeToDeccelerateBoost);
+            _speed = Mathf.Lerp(startingSpeed, ForwardMaxSpeed, timer / _timeToDeccelerateBoost);
             yield return null;
         }
         _speed = 0f;
@@ -109,7 +111,7 @@ public class ForwardWorldMovement : MonoBehaviour
 
     public void StartMovingForward()
     {
-        if (_coroutine == null && _speed != _forwardMaxSpeed)
+        if (_coroutine == null && _speed != ForwardMaxSpeed)
         {
             _coroutine = StartCoroutine(RoutineAccelerate());
         }
