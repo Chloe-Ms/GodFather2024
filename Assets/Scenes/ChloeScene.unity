@@ -148,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 1857331232795929302, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _timeAccelerationAfterCollide
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1879281544352475434, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
