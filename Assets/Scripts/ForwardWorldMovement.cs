@@ -9,13 +9,14 @@ public class ForwardWorldMovement : MonoBehaviour
     [SerializeField] float _timeToDeccelerate = 2f;
     [SerializeField] GameObject _normalChunk;
     [SerializeField] GameObject _worldParent;
-    public List<GameObject> ObjectsToMove { get; private set; }
 
     Camera _cam;
     Coroutine _coroutine;
     float _speed = 0f;
     ManagerRoad _managerRoad;
     int _indexNextChunk;
+    public List<GameObject> ObjectsToMove { get; private set; }
+    public bool HasStarted { get; private set; } = false;
 
     private void Awake()
     {
@@ -111,6 +112,7 @@ public class ForwardWorldMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            HasStarted = true;
             StartMovingForward();
         }
     }
