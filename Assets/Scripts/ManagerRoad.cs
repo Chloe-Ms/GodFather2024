@@ -60,7 +60,7 @@ public class ManagerRoad : MonoBehaviour
         _poolIndexToName = new Dictionary<int, string>();
         foreach(var go in listPrefabs)
         {
-            _poolIndexToName.Add(go.Index, go.RoadChunk.name);
+            //_poolIndexToName.Add(go.Index, go.RoadChunk.name);
             _dictIndexPrefab[go.Index] = go.RoadChunk;
         }
     }
