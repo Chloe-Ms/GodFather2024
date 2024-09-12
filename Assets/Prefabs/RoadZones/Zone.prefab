@@ -95,6 +95,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZoneVisuals
       objectReference: {fileID: 0}
+    - target: {fileID: 8335391484365320479, guid: c86c7b54e9e8f1143a5e729e814ad5c6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383248437228569422, guid: c86c7b54e9e8f1143a5e729e814ad5c6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1611800123697428155, guid: c86c7b54e9e8f1143a5e729e814ad5c6, type: 3}
     m_RemovedGameObjects: []
