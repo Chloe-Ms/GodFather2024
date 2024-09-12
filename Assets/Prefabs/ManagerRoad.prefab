@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2353210144058063974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3284656928843732045}
+  - component: {fileID: 1029750868864662358}
+  - component: {fileID: 7916803141063303249}
+  m_Layer: 0
+  m_Name: ManagerRoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3284656928843732045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353210144058063974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029750868864662358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353210144058063974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c42fc32b9d9cf54b892f6a2ccf0725e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forwardMaxSpeed: 10
+  _timeToAccelerate: 2
+  _timeToDeccelerate: 1
+  _normalChunk: {fileID: 8137590388040729554, guid: 95beb771ae58ad345a683bc00d749f34,
+    type: 3}
+  _worldParent: {fileID: 0}
+--- !u!114 &7916803141063303249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353210144058063974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f1e57f2570d754e982def1f00c5c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nbOfChunksTotal: 5
+  _nbOfChunksPreloaded: 3
+  _chunkSize: 10
+  _listPrefabsEasy:
+  - Index: 5
+    RoadChunk: {fileID: 4547237032901600434, guid: c71d8a501098d71478dd001a445fcd92,
+      type: 3}
+  - Index: 3
+    RoadChunk: {fileID: 4710651592090551247, guid: b3781a900a57533488d2513404f74d61,
+      type: 3}
+  - Index: 2
+    RoadChunk: {fileID: 4547237032901600434, guid: c71d8a501098d71478dd001a445fcd92,
+      type: 3}
+  - Index: 5
+    RoadChunk: {fileID: 6686351209128167895, guid: 5c47dd66266654a48ae0797274ebc9d3,
+      type: 3}
+  _listPrefabsMedium: []
+  _listPrefabsDifficult: []
+  _difficulty: 0
