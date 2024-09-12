@@ -19,6 +19,7 @@ public class ForwardWorldMovement : MonoBehaviour
     float _speed = 0f;
     ManagerRoad _managerRoad;
     int _indexNextChunk;
+    bool _isSpeedingUp = false;
     public List<GameObject> ObjectsToMove { get; private set; }
     public bool HasStarted { get; private set; } = false;
     public float ForwardMaxSpeed { get => _forwardMaxSpeed; }
@@ -71,13 +72,17 @@ public class ForwardWorldMovement : MonoBehaviour
         _speed = ForwardMaxSpeed;
     }
 
-    public void Boost()
+    public void StartBoost()
     {
+        if (_isSpeedingUp)
+            return;
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
             _coroutine = null;
         }
+        Debug.Log("START BOOST");
+        _isSpeedingUp = true;
         _coroutine = StartCoroutine(RoutineAccelerateBoost());
     }
 
@@ -85,15 +90,18 @@ public class ForwardWorldMovement : MonoBehaviour
     {
         float timer = 0f;
         float startingSpeed = _speed;
-        while (timer < _timeToAccelerateBoost)
+        while (_speed < _boostSpeed)
         {
             timer += Time.deltaTime;
             _speed = Mathf.Lerp(startingSpeed, _boostSpeed, timer / _timeToAccelerateBoost);
             yield return null;
         }
-        _speed = ForwardMaxSpeed;
+        _speed = _boostSpeed;
+        Debug.Log("MAX SPEED");
+        _isSpeedingUp = false;
         yield return new WaitForSeconds(_boostDuration);
         _coroutine = StartCoroutine(RoutineDecelerateBoost());
+        Debug.Log("END BOOST");
     }
 
     IEnumerator RoutineDecelerateBoost()
@@ -106,7 +114,8 @@ public class ForwardWorldMovement : MonoBehaviour
             _speed = Mathf.Lerp(startingSpeed, ForwardMaxSpeed, timer / _timeToDeccelerateBoost);
             yield return null;
         }
-        _speed = 0f;
+        _speed = ForwardMaxSpeed;
+        Debug.Log("NORMAL SPEED");
     }
 
     public void StartMovingForward()
