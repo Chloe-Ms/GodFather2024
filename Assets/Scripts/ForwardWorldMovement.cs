@@ -7,7 +7,7 @@ public class ForwardWorldMovement : MonoBehaviour
     [SerializeField] float _forwardMaxSpeed = 10f;
     [SerializeField] float _timeToAccelerate = 2f;
     [SerializeField] float _timeToDeccelerate = 2f;
-    [SerializeField] GameObject _normalChunk;
+    [SerializeField] GameObject[] _normalChunks;
     [SerializeField] GameObject _worldParent;
 
     Camera _cam;
@@ -36,13 +36,21 @@ public class ForwardWorldMovement : MonoBehaviour
                 chunkGameobject = _managerRoad.DictIndexPrefab[i+1];
             } else
             {
-                chunkGameobject = _normalChunk;
+                chunkGameobject = GetRandomNormalChunk();
             }
             var instance = Instantiate(chunkGameobject, _worldParent.transform.position + _cam.transform.forward * _managerRoad.ChunkSize * i, Quaternion.identity, _worldParent.transform);
             ObjectsToMove.Add(instance);
         }
         
         _indexNextChunk = _managerRoad.NbOfChunksPreloaded + 1;
+    }
+
+    GameObject GetRandomNormalChunk()
+    {
+        if (_normalChunks.Length == 0)
+            return null;
+        int randomIndex = Random.Range(0, _normalChunks.Length);
+        return _normalChunks[randomIndex];
     }
 
     IEnumerator RoutineAccelerate()
@@ -134,7 +142,7 @@ public class ForwardWorldMovement : MonoBehaviour
                 }
                 else
                 {
-                    chunkGameobject = _normalChunk;
+                    chunkGameobject = GetRandomNormalChunk();
                 }
                 ObjectsToMove.Add(Instantiate(chunkGameobject, ObjectsToMove[ObjectsToMove.Count - 1].transform.position + _cam.transform.forward * _managerRoad.ChunkSize, Quaternion.identity, _worldParent.transform));
             }
