@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class Timer : MonoBehaviour
 {
@@ -46,6 +47,5 @@ public class Timer : MonoBehaviour
             startTimer = true;
             timerPanel.SetActive(true);
         }
-        
     }
 }

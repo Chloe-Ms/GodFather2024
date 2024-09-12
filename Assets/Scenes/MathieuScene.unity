@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1096816078}
-  remainingTime: 10
+  remainingTime: 60
   gameOverPanel: {fileID: 245236060}
   timerPanel: {fileID: 1096816077}
 --- !u!114 &1032349073
