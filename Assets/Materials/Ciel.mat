@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MatZoneEnd
+  m_Name: Ciel
   m_Shader: {fileID: -6465566751694194690, guid: 997515909245ddd439c449e5b0c0f358,
     type: 3}
   m_Parent: {fileID: 2100000, guid: 98a604619667a994ab7842b9b154689b, type: 2}
@@ -25,15 +25,16 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 6bafdcd5d220bc74e94b6153382dc3e0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9ce92c65db0bcaf4797eb3d6264b0b39, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CurveStrengh: 0
+    - _CurveStrengh: 0.02
+    - _QueueControl: 0
     m_Colors:
     - _BaseColor: {r: 0.97574794, g: 1, b: 0.3226415, a: 1}
-    - _Color: {r: 0.9757479, g: 1, b: 0.32264146, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7760846051967394828
 MonoBehaviour:
