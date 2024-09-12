@@ -3,43 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
     
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField]float remainingTime;
+    [SerializeField]float _timeBeforePanelAppears = 2f;
     public GameObject gameOverPanel;
+    public GameObject winPanel;
     public GameObject timerPanel;
     private bool startTimer = false;
+    private bool _isGameFinished = false;
+
+    private void Start()
+    {
+        gameOverPanel.SetActive(false);
+        winPanel.SetActive(false);
+        Managers.ManagerEndings.OnLoseEvent += OnLoseEvent;
+        Managers.ManagerEndings.OnWinEvent += OnWinEvent;
+    }
+
+    private void OnLoseEvent()
+    {
+        _isGameFinished = true;
+        gameOverPanel.SetActive(true);
+    }
+
+    private void OnWinEvent()
+    {
+        _isGameFinished = false;
+        StartCoroutine(WaitToDisplayPanel());
+    }
+
+    IEnumerator WaitToDisplayPanel()
+    {
+        yield return new WaitForSeconds(_timeBeforePanelAppears);
+        winPanel.SetActive(true);
+    }
+
     void Update()
     {
-        switch (startTimer)
+        if (!_isGameFinished)
         {
-            case true:
-                if (remainingTime > 0)
-                {
-                    remainingTime -= Time.deltaTime;
-                    if (remainingTime < 10)
+            switch (startTimer)
+            {
+                case true:
+                    if (remainingTime > 0)
                     {
-                        timerText.color = Color.red;
+                        remainingTime -= Time.deltaTime;
+                        if (remainingTime < 10)
+                        {
+                            timerText.color = Color.red;
+                        }
+                        else if (remainingTime < 50)
+                        {
+                            timerText.color = Color.yellow;
+                        }
                     }
-                    else if (remainingTime < 50)
+                    else if (remainingTime < 0)
                     {
-                        timerText.color = Color.yellow;
+                        remainingTime = 0;
+                        // GameOver
+                        gameOverPanel.SetActive(true);
+                        Time.timeScale = 0;
                     }
-                }
-                else if (remainingTime < 0)
-                {
-                    remainingTime = 0;
-                    // GameOver
-                    gameOverPanel.SetActive(true);
-                    Time.timeScale = 0;
-                }
-                int minutes = Mathf.FloorToInt(remainingTime / 60);
-                int seconds = Mathf.FloorToInt(remainingTime % 60);
-                timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-                break;
+                    int minutes = Mathf.FloorToInt(remainingTime / 60);
+                    int seconds = Mathf.FloorToInt(remainingTime % 60);
+                    timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+                    break;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
