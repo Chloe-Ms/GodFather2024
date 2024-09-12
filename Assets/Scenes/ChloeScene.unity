@@ -155,6 +155,41 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -22.58
       objectReference: {fileID: 0}
+    - target: {fileID: 4731889534984202696, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731889534984202696, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731889534984202696, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731889534984202696, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731889534984202696, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731889534984202696, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731889534984202696, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5660608796127153343, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -230,6 +265,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6983772807606103080, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: remainingTime
+      value: 999
+      objectReference: {fileID: 0}
     - target: {fileID: 7772909381492591140, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_Name
@@ -237,13 +277,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
-      propertyPath: _nbOfChunksPreloaded
-      value: 5
+      propertyPath: _difficulty
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
-      propertyPath: _listPrefabsEasy.Array.data[0].Index
-      value: 1
+      propertyPath: _nbOfChunksTotal
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -253,19 +293,31 @@ PrefabInstance:
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[2].Index
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[1].RoadChunk
       value: 
-      objectReference: {fileID: 8137590388040729554, guid: f311676c11c3e27458440397624e6332,
+      objectReference: {fileID: 4710651592090551247, guid: b3781a900a57533488d2513404f74d61,
         type: 3}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[2].RoadChunk
       value: 
+      objectReference: {fileID: 6686351209128167895, guid: 5c47dd66266654a48ae0797274ebc9d3,
+        type: 3}
+    - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: _listPrefabsEasy.Array.data[3].RoadChunk
+      value: 
       objectReference: {fileID: 4710651592090551247, guid: b3781a900a57533488d2513404f74d61,
+        type: 3}
+    - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: _listPrefabsEasy.Array.data[4].RoadChunk
+      value: 
+      objectReference: {fileID: 4710651592090551247, guid: e4749e43c409f0c429408add8f2dfa9c,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

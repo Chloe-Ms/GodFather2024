@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5916471228573061565}
   - component: {fileID: 3504322097576688050}
   - component: {fileID: 4417259459929931004}
+  - component: {fileID: 5415254167057464635}
+  - component: {fileID: 3704084523894363574}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -106,3 +108,72 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5415254167057464635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713773407824449527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f520f7617180a4983ee0fc03303f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3704084523894363574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713773407824449527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc6992f3b6094f43bbda873c1118d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _curveSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.747987
+      outSlope: 2.747987
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.041537162
+      value: 0.11414358
+      inSlope: 2.199715
+      outSlope: 2.199715
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.8154251
+      outWeight: 0.04806484
+    - serializedVersion: 3
+      time: 0.9353238
+      value: 0.82575715
+      inSlope: 1.5077188
+      outSlope: 1.5077188
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.05912724
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2.694079
+      outSlope: 2.694079
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _movementDuration: 5
+  _startingPoint: {fileID: 0}
+  _endingPoint: {fileID: 0}
