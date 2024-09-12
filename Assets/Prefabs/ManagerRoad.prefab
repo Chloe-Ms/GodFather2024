@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3284656928843732045}
   - component: {fileID: 1029750868864662358}
+  - component: {fileID: 7916803141063303249}
   m_Layer: 0
   m_Name: ManagerRoad
   m_TagString: Untagged
@@ -47,6 +48,37 @@ MonoBehaviour:
   _forwardMaxSpeed: 10
   _timeToAccelerate: 2
   _timeToDeccelerate: 1
-  _objectsToMove:
-  - {fileID: 0}
-  - {fileID: 0}
+  _normalChunk: {fileID: 8137590388040729554, guid: 95beb771ae58ad345a683bc00d749f34,
+    type: 3}
+  _worldParent: {fileID: 0}
+--- !u!114 &7916803141063303249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353210144058063974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f1e57f2570d754e982def1f00c5c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nbOfChunksTotal: 10
+  _nbOfChunksPreloaded: 5
+  _chunkSize: 30
+  _listPrefabsEasy:
+  - Index: 5
+    RoadChunk: {fileID: 4547237032901600434, guid: c71d8a501098d71478dd001a445fcd92,
+      type: 3}
+  - Index: 3
+    RoadChunk: {fileID: 4710651592090551247, guid: b3781a900a57533488d2513404f74d61,
+      type: 3}
+  - Index: 2
+    RoadChunk: {fileID: 4547237032901600434, guid: c71d8a501098d71478dd001a445fcd92,
+      type: 3}
+  - Index: 10
+    RoadChunk: {fileID: 6686351209128167895, guid: 5c47dd66266654a48ae0797274ebc9d3,
+      type: 3}
+  _listPrefabsMedium: []
+  _listPrefabsDifficult: []
+  _difficulty: 0

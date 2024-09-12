@@ -6,7 +6,7 @@ public class TriggerRoadEnd : MonoBehaviour
 {
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider != null)
+        if (collider != null && collider.gameObject.tag == "Player")
         {
             Managers.WorldMovement?.StopDecelerateMovingForward();
         }
