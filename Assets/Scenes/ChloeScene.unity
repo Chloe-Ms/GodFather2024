@@ -148,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 1879281544352475434, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.4
+      value: -22.58
       objectReference: {fileID: 0}
     - target: {fileID: 5660608796127153343, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -209,6 +209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744265694859714508, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7772909381492591140, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -362,7 +367,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1860884217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a421af5bf805f2f4caaa65b0e2679240, type: 3}
+  m_Script: {fileID: 11500000, guid: 52df229264b1c8d48b83163e77a0779e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EnableIMU: 1
