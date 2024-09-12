@@ -43,6 +43,10 @@ public class ManagerRoad : MonoBehaviour
     private void Awake()
     {
         Managers.ManagerRoad = this;
+        if (SelectionDifficulty.Instance != null)
+        {
+            _difficulty = SelectionDifficulty.Instance.Difficulty;
+        }
         InstantiatePrefabsForPool(GetListPrefabsForDifficulty());
     }
 
