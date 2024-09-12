@@ -38,6 +38,7 @@ public class JoyconMouv : MonoBehaviour
             }
             gyro = j.GetGyro();
             realPosition.x += (gyro.x / 5);
+
             if (realPosition.x < minX)
             {
                 newPosition.x = minX;
@@ -49,6 +50,8 @@ public class JoyconMouv : MonoBehaviour
                 newPosition.x = realPosition.x;
             }
             gameObject.transform.position = newPosition;
+
+            
         }
     }
 }
