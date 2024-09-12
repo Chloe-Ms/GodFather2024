@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    [SerializeField] string _mainScene;
-    [SerializeField] string _menuScene;
+    [SerializeField,Scene] int _mainScene;
+    [SerializeField,Scene] int _menuScene;
 
     public void LoadMainScene()
     {

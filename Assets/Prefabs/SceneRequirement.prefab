@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 2888881972826090194}
   - component: {fileID: 1850003715954061633}
   - component: {fileID: 6983772807606103080}
+  - component: {fileID: 5199920382688883487}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -567,6 +568,20 @@ MonoBehaviour:
   timerText: {fileID: 7887153087112132418}
   remainingTime: 5
   gameOverPanel: {fileID: 8778435949806277016}
+--- !u!114 &5199920382688883487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750662295964861660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0feaacd3ae6ca8845bd2d8881b0a09fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainScene: 2
+  _menuScene: 0
 --- !u!1 &4845453801264120666
 GameObject:
   m_ObjectHideFlags: 0
