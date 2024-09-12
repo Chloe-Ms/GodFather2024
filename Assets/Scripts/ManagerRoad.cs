@@ -46,6 +46,13 @@ public class ManagerRoad : MonoBehaviour
         InstantiatePrefabsForPool(GetListPrefabsForDifficulty());
     }
 
+    private void Start()
+    {
+        if (SelectionDifficulty.Instance != null)
+        {
+            _difficulty = SelectionDifficulty.Instance.Difficulty;
+        }
+    }
     private void OnValidate()
     {
         if (_nbOfChunksPreloaded > _nbOfChunksTotal)
