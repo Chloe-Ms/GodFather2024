@@ -130,6 +130,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 17623997125962638, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_Name
+      value: WinMenuTxt
+      objectReference: {fileID: 0}
     - target: {fileID: 35459303306733940, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -140,10 +145,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -10.7
       objectReference: {fileID: 0}
+    - target: {fileID: 224157684523950435, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_Name
+      value: WinMenuBt
+      objectReference: {fileID: 0}
     - target: {fileID: 1370440775413990737, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1801673095744139476, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 276
       objectReference: {fileID: 0}
     - target: {fileID: 1857331232795929302, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -230,15 +245,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6847105548224167258, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6983772807606103080, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: remainingTime
-      value: 999
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7772909381492591140, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_Name
       value: SceneRequirement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851527619431699487, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_text
+      value: Tu as perdu
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -717,6 +742,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6686351209128167895, guid: 5c47dd66266654a48ae0797274ebc9d3,
         type: 3}
+    - target: {fileID: 8778435949806277016, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

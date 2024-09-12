@@ -5,8 +5,12 @@ using UnityEngine;
 public class ForwardWorldMovement : MonoBehaviour
 {
     [SerializeField] float _forwardMaxSpeed = 10f;
+    [SerializeField] float _boostSpeed = 10f;
     [SerializeField] float _timeToAccelerate = 2f;
+    [SerializeField] float _timeToAccelerateBoost = 1f;
     [SerializeField] float _timeToDeccelerate = 2f;
+    [SerializeField] float _timeToDeccelerateBoost = 2f;
+    [SerializeField] float _boostDuration = 4f;
     [SerializeField] GameObject[] _normalChunks;
     [SerializeField] GameObject _worldParent;
 
@@ -65,6 +69,44 @@ public class ForwardWorldMovement : MonoBehaviour
         _speed = _forwardMaxSpeed;
     }
 
+    public void Boost()
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
+        _coroutine = StartCoroutine(RoutineAccelerateBoost());
+    }
+
+    IEnumerator RoutineAccelerateBoost()
+    {
+        float timer = 0f;
+        float startingSpeed = _speed;
+        while (timer < _timeToAccelerateBoost)
+        {
+            timer += Time.deltaTime;
+            _speed = Mathf.Lerp(startingSpeed, _boostSpeed, timer / _timeToAccelerateBoost);
+            yield return null;
+        }
+        _speed = _forwardMaxSpeed;
+        yield return new WaitForSeconds(_boostDuration);
+        _coroutine = StartCoroutine(RoutineDecelerateBoost());
+    }
+
+    IEnumerator RoutineDecelerateBoost()
+    {
+        float timer = 0f;
+        float startingSpeed = _speed;
+        while (timer < _timeToDeccelerateBoost)
+        {
+            timer += Time.deltaTime;
+            _speed = Mathf.Lerp(startingSpeed, _forwardMaxSpeed, timer / _timeToDeccelerateBoost);
+            yield return null;
+        }
+        _speed = 0f;
+    }
+
     public void StartMovingForward()
     {
         if (_coroutine == null && _speed != _forwardMaxSpeed)
@@ -96,10 +138,11 @@ public class ForwardWorldMovement : MonoBehaviour
     IEnumerator RoutineDecelerate()
     {
         float timer = 0f;
-        while (timer < _timeToAccelerate)
+        float startingSpeed = _speed;
+        while (timer < _timeToDeccelerate)
         {
             timer += Time.deltaTime;
-            _speed = Mathf.Lerp(_forwardMaxSpeed, 0f, timer / _timeToDeccelerate);
+            _speed = Mathf.Lerp(startingSpeed, 0f, timer / _timeToDeccelerate);
             yield return null;
         }
         _speed = 0f;
