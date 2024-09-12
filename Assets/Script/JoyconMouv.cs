@@ -12,11 +12,10 @@ public class JoyconMouv : MonoBehaviour
     [SerializeField] private float maxX;
     private Vector3 newPosition;
     private Vector3 realPosition;
-    private Vector3 defaultPosition;
+    [SerializeField] private GameObject defaultPosition;
     
     void Start()
     {
-        defaultPosition = transform.position;
         gyro = new Vector3(0, 0, 0);
         realPosition = gameObject.transform.position;
         // get the public Joycon array attached to the JoyconManager in scene
@@ -25,6 +24,7 @@ public class JoyconMouv : MonoBehaviour
 		if (joycons != null && joycons.Count < jc_ind+1){
 			Destroy(gameObject);
 		}
+        transform.position = defaultPosition.transform.position;
     }
 
     
@@ -36,7 +36,7 @@ public class JoyconMouv : MonoBehaviour
             if (j.GetButtonDown(Joycon.Button.SHOULDER_2) || Input.GetKeyDown(KeyCode.Space))
             {
                 //Debug.Log ("Shoulder button 2 pressed");
-                realPosition = defaultPosition;
+                realPosition = defaultPosition.transform.position;
             }
             gyro = j.GetGyro();
             realPosition.x += (gyro.x/10);
