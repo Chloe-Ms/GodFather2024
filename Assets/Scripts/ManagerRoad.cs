@@ -50,14 +50,6 @@ public class ManagerRoad : MonoBehaviour
         InstantiatePrefabsForPool(GetListPrefabsForDifficulty());
     }
 
-    private void OnValidate()
-    {
-        if (_nbOfChunksPreloaded > _nbOfChunksTotal)
-        {
-            _nbOfChunksPreloaded = _nbOfChunksTotal;
-        }
-    }
-
     void InstantiatePrefabsForPool(List<RoadModifiableChunk> listPrefabs)
     {
         _dictIndexPrefab = new Dictionary<int, GameObject>();
