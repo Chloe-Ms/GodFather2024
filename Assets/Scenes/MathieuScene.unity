@@ -543,7 +543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gyro: {x: 0, y: 0, z: 0}
-  orientation: {x: 0, y: 0, z: 0, w: 0}
   jc_ind: 0
   defaultPosition: {x: 0, y: 0, z: 0}
   minX: -20

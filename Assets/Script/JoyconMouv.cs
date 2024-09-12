@@ -37,7 +37,7 @@ public class JoyconMouv : MonoBehaviour
                 realPosition = new Vector3(0,0,0);
             }
             gyro = j.GetGyro();
-            realPosition.x += (gyro.x / 5);
+            realPosition.x += (gyro.x/10);
 
             if (realPosition.x < minX)
             {
