@@ -260,11 +260,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6744265694859714508, guid: c483059c3be7c7d4c95b5edf2e59f336,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6847105548224167258, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_IsActive
@@ -293,6 +288,11 @@ PrefabInstance:
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _nbOfChunksTotal
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: _nbOfChunksPreloaded
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
@@ -318,7 +318,7 @@ PrefabInstance:
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[3].Index
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -520,19 +520,19 @@ PrefabInstance:
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[1].RoadChunk
       value: 
-      objectReference: {fileID: 4547237032901600434, guid: e292467dedb5436428f018fc7ac21697,
+      objectReference: {fileID: 4710651592090551247, guid: e4749e43c409f0c429408add8f2dfa9c,
         type: 3}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[2].RoadChunk
       value: 
-      objectReference: {fileID: 8137590388040729554, guid: f311676c11c3e27458440397624e6332,
+      objectReference: {fileID: 4710651592090551247, guid: b3781a900a57533488d2513404f74d61,
         type: 3}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[3].RoadChunk
       value: 
-      objectReference: {fileID: 8137590388040729554, guid: 1ef4b6d0d344900438defd64ebaa81b9,
+      objectReference: {fileID: 4710651592090551247, guid: b3781a900a57533488d2513404f74d61,
         type: 3}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}

@@ -13,7 +13,7 @@ public class PNJMovement : MonoBehaviour
 
     private void Start()
     {
-        gameObject.transform.position = _startingPoint?.transform.position ?? Vector3.zero;
+        gameObject.transform.position = _startingPoint.transform.position;
     }
 
     public void Move()
@@ -27,11 +27,14 @@ public class PNJMovement : MonoBehaviour
     IEnumerator RoutineMove()
     {
         ForwardWorldMovement forwardWorldMovement = Managers.WorldMovement;
-        yield return new WaitUntil(() => forwardWorldMovement.HasStarted);
+        if (!forwardWorldMovement.HasStarted)
+        {
+            yield return new WaitUntil(() => forwardWorldMovement.HasStarted);
+        }
         float timer = 0f;
         while (timer < _movementDuration)
         {
-            gameObject.transform.localPosition = Vector3.Lerp(
+            gameObject.transform.position = Vector3.Lerp(
                 _startingPoint.transform.position, 
                 _endingPoint.transform.position,
                 _curveSpeed.Evaluate(timer / _movementDuration)
