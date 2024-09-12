@@ -48,8 +48,10 @@ MonoBehaviour:
   _forwardMaxSpeed: 10
   _timeToAccelerate: 2
   _timeToDeccelerate: 1
-  _normalChunk: {fileID: 8137590388040729554, guid: 95beb771ae58ad345a683bc00d749f34,
-    type: 3}
+  _normalChunks:
+  - {fileID: 8137590388040729554, guid: 95beb771ae58ad345a683bc00d749f34, type: 3}
+  - {fileID: 8137590388040729554, guid: a65d7795a83b6734b9df5d1f5f2b339a, type: 3}
+  - {fileID: 8137590388040729554, guid: 1ef4b6d0d344900438defd64ebaa81b9, type: 3}
   _worldParent: {fileID: 0}
 --- !u!114 &7916803141063303249
 MonoBehaviour:
