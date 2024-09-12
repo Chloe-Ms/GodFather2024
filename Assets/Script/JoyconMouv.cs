@@ -33,20 +33,21 @@ public class JoyconMouv : MonoBehaviour
         if (joycons != null && joycons.Count > 0)
         {
             Joycon j = joycons [jc_ind];
-            if (j.GetButtonDown(Joycon.Button.SHOULDER_2) || Input.GetKeyDown(KeyCode.Space))
+
+            gyro = j.GetAccel();
+            Debug.Log(gyro);
+            if (gyro.y < 0.05 && gyro.y > -0.05)
             {
-                //Debug.Log ("Shoulder button 2 pressed");
-                realPosition = defaultPosition.transform.position;
+                gyro.y = 0;
             }
-            gyro = j.GetGyro();
-            realPosition.x += (gyro.x/10);
+            realPosition.x += (gyro.y/3);
 
             if (realPosition.x < minX)
             {
-                newPosition.x = minX;
+                realPosition.x = minX;
             }else if (realPosition.x > maxX)
             {
-                newPosition.x = maxX;
+                realPosition.x = maxX;
             }else
             {
                 newPosition.x = realPosition.x;
