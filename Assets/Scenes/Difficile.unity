@@ -351,7 +351,7 @@ PrefabInstance:
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _difficulty
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
