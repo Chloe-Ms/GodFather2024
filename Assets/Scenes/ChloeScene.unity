@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1879281544352475434, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24
+      objectReference: {fileID: 0}
     - target: {fileID: 5660608796127153343, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -192,8 +197,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
+      propertyPath: _nbOfChunksTotal
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: _nbOfChunksPreloaded
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
       propertyPath: _listPrefabsEasy.Array.data[0].Index
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: _listPrefabsEasy.Array.data[3].Index
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
