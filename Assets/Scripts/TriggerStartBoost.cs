@@ -17,6 +17,7 @@ public class TriggerStartBoost : MonoBehaviour
         {
             Managers.WorldMovement.StartBoost();
             audioManager.PlaySFX(audioManager.boostSFX);
+            audioManager.PlaySFX2(audioManager.eatingCarrotSFX);
         }
     }
 }
