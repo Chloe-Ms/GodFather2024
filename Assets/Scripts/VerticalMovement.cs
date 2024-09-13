@@ -26,7 +26,7 @@ public class VerticalMovement : MonoBehaviour
         if (_worldMovement.Speed > 0)
         {
             float ratioSpeed = _worldMovement.Speed / _worldMovement.ForwardMaxSpeed;
-            _timer += Time.deltaTime * ratioSpeed;
+            _timer += Time.deltaTime * ratioSpeed * ratioSpeed;
             Vector3 position = transform.position;
             position.y = _startingPosition.y + _heightMovement * Mathf.Sin(_speedMovement * _timer);
             transform.position = position;

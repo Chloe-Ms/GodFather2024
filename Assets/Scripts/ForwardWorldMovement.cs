@@ -141,14 +141,13 @@ public class ForwardWorldMovement : MonoBehaviour
     IEnumerator RoutineKnockback()
     {
         float timer = 0f;
-        float startingSpeed = _speed;
         while (timer < _knockbackDuration)
         {
+            _speed = Mathf.Lerp(-_speedKnockback, 0f, timer / _knockbackDuration);
             timer += Time.deltaTime;
-            //_speed = Mathf.Lerp(, ForwardMaxSpeed, timer / _knockbackDuration);
             yield return null;
         }
-        _speed = _speedKnockback;
+        _coroutine = StartCoroutine(RoutineAccelerate());
     }
 
     public void StopMovingForward()
@@ -186,7 +185,7 @@ public class ForwardWorldMovement : MonoBehaviour
 
     void MoveForward()
     {
-        if (_speed > 0f)
+        if (_speed != 0f)
         {
             foreach (GameObject go in ObjectsToMove)
             {
