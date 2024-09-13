@@ -18,6 +18,7 @@ public class Obstacle : MonoBehaviour
             if (playerCol != null)
             {
                 _collision.enabled = false;
+                gameObject.SetActive(false);
                 playerCol.CollideWithObstacle();
             }
         }

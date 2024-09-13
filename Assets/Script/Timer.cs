@@ -104,7 +104,7 @@ public class Timer : MonoBehaviour
         {
             startTimer = true;
             timerPanel.SetActive(true);
-            audioManager.PlayMusic(audioManager.mainMenuMusic);
+            audioManager.PlayMusic(audioManager.inGameMusic);
         }
     }
 }
