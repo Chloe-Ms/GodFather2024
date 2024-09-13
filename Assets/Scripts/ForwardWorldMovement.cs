@@ -11,6 +11,8 @@ public class ForwardWorldMovement : MonoBehaviour
     [SerializeField] float _timeToDeccelerate = 2f;
     [SerializeField] float _timeToDeccelerateBoost = 2f;
     [SerializeField] float _boostDuration = 4f;
+    [SerializeField] float _knockbackDuration = 0.5f;
+    [SerializeField] float _speedKnockback = 2f;
     [SerializeField] GameObject[] _normalChunks;
     [SerializeField] GameObject _worldParent;
 
@@ -124,6 +126,29 @@ public class ForwardWorldMovement : MonoBehaviour
         {
             _coroutine = StartCoroutine(RoutineAccelerate());
         }
+    }
+
+    public void Knockback()
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
+        _coroutine = StartCoroutine(RoutineKnockback());
+    }
+
+    IEnumerator RoutineKnockback()
+    {
+        float timer = 0f;
+        float startingSpeed = _speed;
+        while (timer < _knockbackDuration)
+        {
+            timer += Time.deltaTime;
+            //_speed = Mathf.Lerp(, ForwardMaxSpeed, timer / _knockbackDuration);
+            yield return null;
+        }
+        _speed = _speedKnockback;
     }
 
     public void StopMovingForward()
