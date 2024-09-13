@@ -37,7 +37,8 @@ public class Timer : MonoBehaviour
     {
         _isGameFinished = true;
         gameOverPanel.SetActive(true);
-        audioManager.PlayMusic(audioManager.loseMusic);
+        audioManager.PlaySFX(audioManager.loseMusic);
+        audioManager.musicSource.Stop();
     }
 
     private void OnWinEvent()
