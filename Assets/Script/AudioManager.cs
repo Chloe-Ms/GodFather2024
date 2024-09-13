@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip loseMusic;
     public AudioClip mainMenuMusic;
     public AudioClip winMusic;
+    public AudioClip inGameMusic;
     public AudioClip boostSFX;
     public AudioClip BtnSwitchSFX;
     public AudioClip calecheSFX;
