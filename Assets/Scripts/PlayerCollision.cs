@@ -25,7 +25,8 @@ public class PlayerCollision : MonoBehaviour
             StopCoroutine( _coroutine);
             _coroutine = null;
         }
-        _coroutine = StartCoroutine(WaitBeforeAcceleration());
+        _worldMovement?.Knockback();
+        //_coroutine = StartCoroutine(WaitBeforeAcceleration());
     }
 
     IEnumerator WaitBeforeAcceleration()

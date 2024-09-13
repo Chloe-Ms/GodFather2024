@@ -167,6 +167,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1658587695209306775, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
+      propertyPath: _speedKnockback
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658587695209306775, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: _knockbackDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658587695209306775, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
       propertyPath: _timeToAccelerateBoost
       value: 0.5
       objectReference: {fileID: 0}
@@ -520,13 +530,13 @@ PrefabInstance:
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[1].RoadChunk
       value: 
-      objectReference: {fileID: 4710651592090551247, guid: e4749e43c409f0c429408add8f2dfa9c,
+      objectReference: {fileID: 8137590388040729554, guid: f311676c11c3e27458440397624e6332,
         type: 3}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: _listPrefabsEasy.Array.data[2].RoadChunk
       value: 
-      objectReference: {fileID: 4710651592090551247, guid: b3781a900a57533488d2513404f74d61,
+      objectReference: {fileID: 8137590388040729554, guid: e0c2c72f165438841b02bf3e68533fb6,
         type: 3}
     - target: {fileID: 8399273564441493904, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
