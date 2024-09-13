@@ -172,6 +172,7 @@ public class ForwardWorldMovement : MonoBehaviour
 
     IEnumerator RoutineDecelerate()
     {
+        Debug.Log("DECEL");
         float timer = 0f;
         float startingSpeed = _speed;
         while (timer < _timeToDeccelerate)
