@@ -56,6 +56,7 @@ public class Timer : MonoBehaviour
                         if (remainingTime < 10)
                         {
                             timerText.color = Color.red;
+                            timerText.rectTransform.DOShakePosition(10, new Vector3(10, 3, 0), 60, 90, true, false);
                         }
                         else if (remainingTime < 50)
                         {
