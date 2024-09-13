@@ -8,4 +8,5 @@ public class Managers : MonoBehaviour
     public static ManagerRoad ManagerRoad { get; set; }
     public static PlayerCollision PlayerCollision { get; set; }
     public static ManagerEndings ManagerEndings { get; set; }
+    public static Vector3 WorldDirection { get; set; }
 }
