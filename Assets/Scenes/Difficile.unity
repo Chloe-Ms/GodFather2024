@@ -272,7 +272,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+      objectReference: {fileID: 11400000, guid: 1a9213fe639f12b439f8825c12077237,
         type: 2}
     - target: {fileID: 123613760315665182, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -298,7 +298,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 9082972017884613210, guid: 1a9213fe639f12b439f8825c12077237,
+        type: 2}
     - target: {fileID: 123613760315665182, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -318,7 +319,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+      objectReference: {fileID: 11400000, guid: 1a9213fe639f12b439f8825c12077237,
         type: 2}
     - target: {fileID: 1336578764892663124, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -339,7 +340,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 9082972017884613210, guid: 1a9213fe639f12b439f8825c12077237,
+        type: 2}
     - target: {fileID: 1336578764892663124, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -364,7 +366,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+      objectReference: {fileID: 11400000, guid: 1a9213fe639f12b439f8825c12077237,
         type: 2}
     - target: {fileID: 1394318953427546872, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -395,7 +397,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 9082972017884613210, guid: 1a9213fe639f12b439f8825c12077237,
+        type: 2}
     - target: {fileID: 1394318953427546872, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -410,7 +413,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+      objectReference: {fileID: 11400000, guid: 1a9213fe639f12b439f8825c12077237,
         type: 2}
     - target: {fileID: 2078939270917639741, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -429,6 +432,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078939270917639741, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 9082972017884613210, guid: 1a9213fe639f12b439f8825c12077237,
+        type: 2}
+    - target: {fileID: 2078939270917639741, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4285897396
       objectReference: {fileID: 0}
@@ -436,6 +445,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303306143043356839, guid: c483059c3be7c7d4c95b5edf2e59f336,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2544738199117543697, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -445,7 +459,7 @@ PrefabInstance:
     - target: {fileID: 2624420822748416385, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_text
-      value: Bravo vayant ecuyer !
+      value: Bravo vayant cocher !
       objectReference: {fileID: 0}
     - target: {fileID: 2624420822748416385, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -456,7 +470,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+      objectReference: {fileID: 11400000, guid: 1a9213fe639f12b439f8825c12077237,
         type: 2}
     - target: {fileID: 2624420822748416385, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -482,7 +496,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 9082972017884613210, guid: 1a9213fe639f12b439f8825c12077237,
+        type: 2}
     - target: {fileID: 2624420822748416385, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -517,7 +532,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+      objectReference: {fileID: 11400000, guid: 1a9213fe639f12b439f8825c12077237,
         type: 2}
     - target: {fileID: 5280998427896672819, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
@@ -543,7 +558,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 9082972017884613210, guid: 1a9213fe639f12b439f8825c12077237,
+        type: 2}
     - target: {fileID: 5280998427896672819, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -662,7 +678,7 @@ PrefabInstance:
     - target: {fileID: 6983772807606103080, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
       propertyPath: remainingTime
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7145641742692397852, guid: c483059c3be7c7d4c95b5edf2e59f336,
         type: 3}
