@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
     public GameObject timerPanel;
     private bool startTimer = false;
     private bool _isGameFinished = false;
+    private int nbShake = 0;
 
     private void Start()
     {
@@ -56,19 +57,31 @@ public class Timer : MonoBehaviour
                         if (remainingTime < 10)
                         {
                             timerText.color = Color.red;
-                            timerText.rectTransform.DOShakePosition(10, new Vector3(10, 3, 0), 60, 90, true, false);
+                            switch (nbShake)
+                            {
+                                case 1:
+                                    timerText.rectTransform.DOShakePosition(10, new Vector3(20, 6, 0), 60, 90, true, false);
+                                    nbShake += 1;
+                                    break;
+                            }
                         }
                         else if (remainingTime < 50)
                         {
                             timerText.color = Color.yellow;
+                            switch (nbShake)
+                            {
+                                case 0:
+                                    timerText.rectTransform.DOShakePosition(10, new Vector3(10, 3, 0), 60, 90, true, false);
+                                    nbShake += 1;
+                                    break;
+                            }
                         }
                     }
                     else if (remainingTime < 0)
                     {
                         remainingTime = 0;
                         // GameOver
-                        gameOverPanel.SetActive(true);
-                        Time.timeScale = 0;
+                        OnLoseEvent();
                     }
                     int minutes = Mathf.FloorToInt(remainingTime / 60);
                     int seconds = Mathf.FloorToInt(remainingTime % 60);
