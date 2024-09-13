@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 570955929734438995}
   - component: {fileID: 868744895345061161}
   - component: {fileID: 5354829851894130744}
+  - component: {fileID: -7631083661153690716}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -100,7 +101,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -116,5 +117,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94f520f7617180a4983ee0fc03303f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7631083661153690716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745247106144972331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7caf3b07c70a94f95831d5b459670d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

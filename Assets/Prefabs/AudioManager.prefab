@@ -181,7 +181,7 @@ MonoBehaviour:
   loseMusic: {fileID: 8300000, guid: c6fa610f73cb91f448b6b1241cda6779, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: 6303d854eb858d941aec0feba2c882be, type: 3}
   winMusic: {fileID: 8300000, guid: a91e0e788fcdc5d40a4d88c86b2b7f41, type: 3}
-  inGameMusic: {fileID: 8300000, guid: f6e7c3b4a803dda45826b15e76ce7215, type: 3}
+  inGameMusic: {fileID: 8300000, guid: 562f9429f08ce374d9944cbbc9b4308f, type: 3}
   boostSFX: {fileID: 8300000, guid: 5603343607db41f449ac95b9728c0418, type: 3}
   BtnSwitchSFX: {fileID: 8300000, guid: 2ab169cb5b894ff42b930a0a5ef1e81e, type: 3}
   calecheSFX: {fileID: 8300000, guid: 7cb85ac2ca3738a478b384071ce201f4, type: 3}
@@ -234,7 +234,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.503
+  m_Volume: 0.108
   m_Pitch: 1
   Loop: 1
   Mute: 0
