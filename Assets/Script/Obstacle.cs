@@ -21,6 +21,8 @@ public class Obstacle : MonoBehaviour
                 gameObject.SetActive(false);
                 playerCol.CollideWithObstacle();
             }
+            ShakeCollision shakeCollision = other.GetComponent<ShakeCollision>();
+            shakeCollision?.StartShake();
         }
 
     }
