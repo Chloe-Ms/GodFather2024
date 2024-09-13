@@ -18,12 +18,13 @@ public class JoyconMouv : MonoBehaviour
     {
         gyro = new Vector3(0, 0, 0);
         realPosition = gameObject.transform.position;
+        newPosition = realPosition;
         // get the public Joycon array attached to the JoyconManager in scene
         if (JoyconManager.Instance != null )
             joycons = JoyconManager.Instance.j;
-		if (joycons != null && joycons.Count < jc_ind+1){
-			Destroy(gameObject);
-		}
+		//if (joycons != null && joycons.Count < jc_ind+1){
+		//	Destroy(gameObject);
+		//}
         transform.position = defaultPosition.transform.position;
     }
 

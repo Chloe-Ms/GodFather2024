@@ -7,6 +7,11 @@ public class PlayerCollision : MonoBehaviour
     ForwardWorldMovement _worldMovement;
     [SerializeField] float _timeAccelerationAfterCollide;
     Coroutine _coroutine;
+
+    private void Awake()
+    {
+        Managers.PlayerCollision = this;
+    }
     private void Start()
     {
         _worldMovement = Managers.WorldMovement;

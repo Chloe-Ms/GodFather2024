@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1713773407824449527
+--- !u!1 &5745247106144972331
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4728791644279872103}
-  - component: {fileID: 5916471228573061565}
-  - component: {fileID: 3504322097576688050}
-  - component: {fileID: 4417259459929931004}
-  - component: {fileID: 5415254167057464635}
-  - component: {fileID: 3704084523894363574}
+  - component: {fileID: 9124712025567953609}
+  - component: {fileID: 6765239151682297474}
+  - component: {fileID: 570955929734438995}
+  - component: {fileID: 1080778546731885638}
+  - component: {fileID: 5354829851894130744}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4728791644279872103
+--- !u!4 &9124712025567953609
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713773407824449527}
+  m_GameObject: {fileID: 5745247106144972331}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 2.32, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -2, y: 2, z: 0}
+  m_LocalScale: {x: 2, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5916471228573061565
+--- !u!33 &6765239151682297474
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713773407824449527}
+  m_GameObject: {fileID: 5745247106144972331}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3504322097576688050
+--- !u!23 &570955929734438995
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713773407824449527}
+  m_GameObject: {fileID: 5745247106144972331}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 018b426ee8583c94b8fc711fcb05734d, type: 2}
+  - {fileID: 2100000, guid: 350aaa54b0b4fa64b9263c90ae0f1ade, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4417259459929931004
+--- !u!64 &1080778546731885638
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713773407824449527}
+  m_GameObject: {fileID: 5745247106144972331}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -108,72 +107,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5415254167057464635
+--- !u!114 &5354829851894130744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713773407824449527}
+  m_GameObject: {fileID: 5745247106144972331}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94f520f7617180a4983ee0fc03303f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3704084523894363574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713773407824449527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc6992f3b6094f43bbda873c1118d13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _curveSpeed:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2.747987
-      outSlope: 2.747987
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.041537162
-      value: 0.11414358
-      inSlope: 2.199715
-      outSlope: 2.199715
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.8154251
-      outWeight: 0.04806484
-    - serializedVersion: 3
-      time: 0.9353238
-      value: 0.82575715
-      inSlope: 1.5077188
-      outSlope: 1.5077188
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.05912724
-      outWeight: 1
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2.694079
-      outSlope: 2.694079
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _movementDuration: 5
-  _startingPoint: {fileID: 0}
-  _endingPoint: {fileID: 0}

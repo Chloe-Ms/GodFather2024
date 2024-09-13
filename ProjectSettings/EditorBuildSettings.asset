@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Difficile.unity
     guid: c920442a877f2f24c9e93806af763cc3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChloeScene.unity
     guid: e7309122c0b5aa74f96a30f56c496385
   m_configObjects: {}
