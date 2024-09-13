@@ -198,6 +198,37 @@ MonoBehaviour:
   _timerOffset: 0.25
   _heightMovement: 0.05
   _speedMovement: 4
+--- !u!1 &5811939768392910129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1211182872824282070}
+  m_Layer: 0
+  m_Name: Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1211182872824282070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811939768392910129}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5018462747798949797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7223601272425995295
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +242,7 @@ GameObject:
   - component: {fileID: 2223256856629013623}
   - component: {fileID: 5452483568274186806}
   - component: {fileID: 3551061155995401212}
+  - component: {fileID: 9025100688492400026}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -233,6 +265,7 @@ Transform:
   m_Children:
   - {fileID: 6952803499503259319}
   - {fileID: 7279746006721710332}
+  - {fileID: 1211182872824282070}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2159930653576238556
@@ -315,3 +348,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeAccelerationAfterCollide: 0
+--- !u!114 &9025100688492400026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7223601272425995295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47acac59bccf9484facbfff873fe3b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToShake: {fileID: 5811939768392910129}
+  _shakeDuration: 1
+  _shakeViolence: 0.3

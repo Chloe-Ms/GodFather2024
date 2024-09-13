@@ -15,8 +15,8 @@ public class ForwardWorldMovement : MonoBehaviour
     [SerializeField] float _speedKnockback = 2f;
     [SerializeField] GameObject[] _normalChunks;
     [SerializeField] GameObject _worldParent;
+    [SerializeField] Vector3 _movementDirection;
 
-    Camera _cam;
     Coroutine _coroutine;
     float _speed = 0f;
     ManagerRoad _managerRoad;
@@ -35,8 +35,8 @@ public class ForwardWorldMovement : MonoBehaviour
 
     private void Start()
     {
-        _cam = Camera.main;
         _managerRoad = Managers.ManagerRoad;
+        _movementDirection = Managers.WorldDirection;
         for (int i = 0; i < _managerRoad.NbOfChunksPreloaded; i++)
         {
             GameObject chunkGameobject;
@@ -47,7 +47,7 @@ public class ForwardWorldMovement : MonoBehaviour
             {
                 chunkGameobject = GetRandomNormalChunk();
             }
-            var instance = Instantiate(chunkGameobject, _worldParent.transform.position + _cam.transform.forward * _managerRoad.ChunkSize * i, Quaternion.identity, _worldParent.transform);
+            var instance = Instantiate(chunkGameobject, _worldParent.transform.position + _movementDirection * _managerRoad.ChunkSize * i, Quaternion.identity, _worldParent.transform);
             ObjectsToMove.Add(instance);
         }
         
@@ -190,7 +190,7 @@ public class ForwardWorldMovement : MonoBehaviour
         {
             foreach (GameObject go in ObjectsToMove)
             {
-                go.transform.localPosition += - _cam.transform.forward * _speed * Time.deltaTime;
+                go.transform.localPosition += - _movementDirection * _speed * Time.deltaTime;
             }
         }
     }
@@ -223,7 +223,7 @@ public class ForwardWorldMovement : MonoBehaviour
                 {
                     chunkGameobject = GetRandomNormalChunk();
                 }
-                ObjectsToMove.Add(Instantiate(chunkGameobject, ObjectsToMove[ObjectsToMove.Count - 1].transform.position + _cam.transform.forward * _managerRoad.ChunkSize, Quaternion.identity, _worldParent.transform));
+                ObjectsToMove.Add(Instantiate(chunkGameobject, ObjectsToMove[ObjectsToMove.Count - 1].transform.position + _movementDirection * _managerRoad.ChunkSize, Quaternion.identity, _worldParent.transform));
             }
             _indexNextChunk++;
         }
