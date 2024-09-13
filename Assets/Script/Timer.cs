@@ -18,6 +18,13 @@ public class Timer : MonoBehaviour
     private bool _isGameFinished = false;
     private int nbShake = 0;
 
+    AudioManager audioManager;
+
+    public void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         gameOverPanel.SetActive(false);
@@ -30,6 +37,7 @@ public class Timer : MonoBehaviour
     {
         _isGameFinished = true;
         gameOverPanel.SetActive(true);
+        audioManager.PlayMusic(audioManager.loseMusic);
     }
 
     private void OnWinEvent()
@@ -42,6 +50,7 @@ public class Timer : MonoBehaviour
     {
         yield return new WaitForSeconds(_timeBeforePanelAppears);
         winPanel.SetActive(true);
+        audioManager.PlayMusic(audioManager.winMusic);
     }
 
     void Update()
@@ -94,6 +103,7 @@ public class Timer : MonoBehaviour
         {
             startTimer = true;
             timerPanel.SetActive(true);
+            audioManager.PlayMusic(audioManager.mainMenuMusic);
         }
     }
 }
