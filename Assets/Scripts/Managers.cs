@@ -6,4 +6,6 @@ public class Managers : MonoBehaviour
 {
     public static ForwardWorldMovement WorldMovement { get; set; }
     public static ManagerRoad ManagerRoad { get; set; }
+    public static PlayerCollision PlayerCollision { get; set; }
+    public static ManagerEndings ManagerEndings { get; set; }
 }

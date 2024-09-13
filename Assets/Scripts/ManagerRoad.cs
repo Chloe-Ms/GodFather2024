@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 [Serializable]
@@ -43,15 +42,11 @@ public class ManagerRoad : MonoBehaviour
     private void Awake()
     {
         Managers.ManagerRoad = this;
-        InstantiatePrefabsForPool(GetListPrefabsForDifficulty());
-    }
-
-    private void OnValidate()
-    {
-        if (_nbOfChunksPreloaded > _nbOfChunksTotal)
+        if (SelectionDifficulty.Instance != null)
         {
-            _nbOfChunksPreloaded = _nbOfChunksTotal;
+            _difficulty = SelectionDifficulty.Instance.Difficulty;
         }
+        InstantiatePrefabsForPool(GetListPrefabsForDifficulty());
     }
 
     void InstantiatePrefabsForPool(List<RoadModifiableChunk> listPrefabs)
@@ -60,7 +55,7 @@ public class ManagerRoad : MonoBehaviour
         _poolIndexToName = new Dictionary<int, string>();
         foreach(var go in listPrefabs)
         {
-            _poolIndexToName.Add(go.Index, go.RoadChunk.name);
+            //_poolIndexToName.Add(go.Index, go.RoadChunk.name);
             _dictIndexPrefab[go.Index] = go.RoadChunk;
         }
     }

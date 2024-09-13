@@ -5,17 +5,27 @@ using UnityEngine;
 public class ForwardWorldMovement : MonoBehaviour
 {
     [SerializeField] float _forwardMaxSpeed = 10f;
+    [SerializeField] float _boostSpeed = 10f;
     [SerializeField] float _timeToAccelerate = 2f;
+    [SerializeField] float _timeToAccelerateBoost = 1f;
     [SerializeField] float _timeToDeccelerate = 2f;
-    [SerializeField] GameObject _normalChunk;
+    [SerializeField] float _timeToDeccelerateBoost = 2f;
+    [SerializeField] float _boostDuration = 4f;
+    [SerializeField] float _knockbackDuration = 0.5f;
+    [SerializeField] float _speedKnockback = 2f;
+    [SerializeField] GameObject[] _normalChunks;
     [SerializeField] GameObject _worldParent;
-    public List<GameObject> ObjectsToMove { get; private set; }
 
     Camera _cam;
     Coroutine _coroutine;
     float _speed = 0f;
     ManagerRoad _managerRoad;
     int _indexNextChunk;
+    bool _isSpeedingUp = false;
+    public List<GameObject> ObjectsToMove { get; private set; }
+    public bool HasStarted { get; private set; } = false;
+    public float ForwardMaxSpeed { get => _forwardMaxSpeed; }
+    public float Speed { get => _speed; }
 
     private void Awake()
     {
@@ -35,7 +45,7 @@ public class ForwardWorldMovement : MonoBehaviour
                 chunkGameobject = _managerRoad.DictIndexPrefab[i+1];
             } else
             {
-                chunkGameobject = _normalChunk;
+                chunkGameobject = GetRandomNormalChunk();
             }
             var instance = Instantiate(chunkGameobject, _worldParent.transform.position + _cam.transform.forward * _managerRoad.ChunkSize * i, Quaternion.identity, _worldParent.transform);
             ObjectsToMove.Add(instance);
@@ -44,24 +54,100 @@ public class ForwardWorldMovement : MonoBehaviour
         _indexNextChunk = _managerRoad.NbOfChunksPreloaded + 1;
     }
 
+    GameObject GetRandomNormalChunk()
+    {
+        if (_normalChunks.Length == 0)
+            return null;
+        int randomIndex = Random.Range(0, _normalChunks.Length);
+        return _normalChunks[randomIndex];
+    }
+
     IEnumerator RoutineAccelerate()
     {
         float timer = 0f;
         while (timer < _timeToAccelerate)
         {
             timer += Time.deltaTime;
-            _speed = Mathf.Lerp(0f, _forwardMaxSpeed, timer / _timeToAccelerate);
+            _speed = Mathf.Lerp(0f, ForwardMaxSpeed, timer / _timeToAccelerate);
             yield return null;
         }
-        _speed = _forwardMaxSpeed;
+        _speed = ForwardMaxSpeed;
+    }
+
+    public void StartBoost()
+    {
+        if (_isSpeedingUp)
+            return;
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
+        Debug.Log("START BOOST");
+        _isSpeedingUp = true;
+        _coroutine = StartCoroutine(RoutineAccelerateBoost());
+    }
+
+    IEnumerator RoutineAccelerateBoost()
+    {
+        float timer = 0f;
+        float startingSpeed = _speed;
+        while (_speed < _boostSpeed)
+        {
+            timer += Time.deltaTime;
+            _speed = Mathf.Lerp(startingSpeed, _boostSpeed, timer / _timeToAccelerateBoost);
+            yield return null;
+        }
+        _speed = _boostSpeed;
+        Debug.Log("MAX SPEED");
+        _isSpeedingUp = false;
+        yield return new WaitForSeconds(_boostDuration);
+        _coroutine = StartCoroutine(RoutineDecelerateBoost());
+        Debug.Log("END BOOST");
+    }
+
+    IEnumerator RoutineDecelerateBoost()
+    {
+        float timer = 0f;
+        float startingSpeed = _speed;
+        while (timer < _timeToDeccelerateBoost)
+        {
+            timer += Time.deltaTime;
+            _speed = Mathf.Lerp(startingSpeed, ForwardMaxSpeed, timer / _timeToDeccelerateBoost);
+            yield return null;
+        }
+        _speed = ForwardMaxSpeed;
+        Debug.Log("NORMAL SPEED");
     }
 
     public void StartMovingForward()
     {
-        if (_coroutine == null && _speed != _forwardMaxSpeed)
+        if (_coroutine == null && _speed != ForwardMaxSpeed)
         {
             _coroutine = StartCoroutine(RoutineAccelerate());
         }
+    }
+
+    public void Knockback()
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
+        _coroutine = StartCoroutine(RoutineKnockback());
+    }
+
+    IEnumerator RoutineKnockback()
+    {
+        float timer = 0f;
+        while (timer < _knockbackDuration)
+        {
+            _speed = Mathf.Lerp(-_speedKnockback, 0f, timer / _knockbackDuration);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        _coroutine = StartCoroutine(RoutineAccelerate());
     }
 
     public void StopMovingForward()
@@ -87,10 +173,11 @@ public class ForwardWorldMovement : MonoBehaviour
     IEnumerator RoutineDecelerate()
     {
         float timer = 0f;
-        while (timer < _timeToAccelerate)
+        float startingSpeed = _speed;
+        while (timer < _timeToDeccelerate)
         {
             timer += Time.deltaTime;
-            _speed = Mathf.Lerp(_forwardMaxSpeed, 0f, timer / _timeToDeccelerate);
+            _speed = Mathf.Lerp(startingSpeed, 0f, timer / _timeToDeccelerate);
             yield return null;
         }
         _speed = 0f;
@@ -98,7 +185,7 @@ public class ForwardWorldMovement : MonoBehaviour
 
     void MoveForward()
     {
-        if (_speed > 0f)
+        if (_speed != 0f)
         {
             foreach (GameObject go in ObjectsToMove)
             {
@@ -111,6 +198,7 @@ public class ForwardWorldMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            HasStarted = true;
             StartMovingForward();
         }
     }
@@ -132,7 +220,7 @@ public class ForwardWorldMovement : MonoBehaviour
                 }
                 else
                 {
-                    chunkGameobject = _normalChunk;
+                    chunkGameobject = GetRandomNormalChunk();
                 }
                 ObjectsToMove.Add(Instantiate(chunkGameobject, ObjectsToMove[ObjectsToMove.Count - 1].transform.position + _cam.transform.forward * _managerRoad.ChunkSize, Quaternion.identity, _worldParent.transform));
             }

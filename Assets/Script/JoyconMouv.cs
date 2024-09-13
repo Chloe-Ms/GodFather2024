@@ -8,43 +8,47 @@ public class JoyconMouv : MonoBehaviour
 
     public Vector3 gyro;
     public int jc_ind = 0;
-    public Vector3 defaultPosition;
     [SerializeField] private float minX;
     [SerializeField] private float maxX;
     private Vector3 newPosition;
     private Vector3 realPosition;
+    [SerializeField] private GameObject defaultPosition;
     
     void Start()
     {
         gyro = new Vector3(0, 0, 0);
         realPosition = gameObject.transform.position;
+        newPosition = realPosition;
         // get the public Joycon array attached to the JoyconManager in scene
-        joycons = JoyconManager.Instance.j;
-		if (joycons.Count < jc_ind+1){
-			Destroy(gameObject);
-		}
+        if (JoyconManager.Instance != null )
+            joycons = JoyconManager.Instance.j;
+		//if (joycons != null && joycons.Count < jc_ind+1){
+		//	Destroy(gameObject);
+		//}
+        transform.position = defaultPosition.transform.position;
     }
 
     
     void Update()
     {
-        if (joycons.Count > 0)
+        if (joycons != null && joycons.Count > 0)
         {
             Joycon j = joycons [jc_ind];
-            if (j.GetButtonDown(Joycon.Button.SHOULDER_2) || Input.GetKeyDown(KeyCode.Space))
+
+            gyro = j.GetAccel();
+            Debug.Log(gyro);
+            if (gyro.y < 0.05 && gyro.y > -0.05)
             {
-                //Debug.Log ("Shoulder button 2 pressed");
-                realPosition = new Vector3(0,0,0);
+                gyro.y = 0;
             }
-            gyro = j.GetGyro();
-            realPosition.x += (gyro.x/10);
+            realPosition.x += (gyro.y/3);
 
             if (realPosition.x < minX)
             {
-                newPosition.x = minX;
+                realPosition.x = minX;
             }else if (realPosition.x > maxX)
             {
-                newPosition.x = maxX;
+                realPosition.x = maxX;
             }else
             {
                 newPosition.x = realPosition.x;
