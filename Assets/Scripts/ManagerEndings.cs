@@ -12,7 +12,9 @@ public class ManagerEndings : MonoBehaviour
         Managers.ManagerEndings = this;
     }
 
-    public void OnWin(){
+    public void OnWin()
+    {
+        Debug.Log("WIN");
         OnWinEvent?.Invoke();
     }
 
